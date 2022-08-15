@@ -1,5 +1,5 @@
 #include<stdio.h>
-float en_erken_hesap (float time){ //fonkiyonlar ile kişinin kaç dakika erken çıktığını hesapladık. 
+float en_erken_hesap (float time){ //fonkiyonlar ile kiÃ¾inin kaÃ§ dakika erken Ã§Ã½ktÃ½Ã°Ã½nÃ½ hesapladÃ½k. 
 float minute,en_erken_minute,saat; 
 int hour,en_erken_hour; 
 hour = time; 
@@ -10,7 +10,7 @@ saat = en_erken_hour+en_erken_minute;
 return saat;
 } 
 
-float en_gec_hesap (float time){ //fonksiyonlar ile kişinin kaç dakika geç kaldığını hesapladık. 
+float en_gec_hesap (float time){ //fonksiyonlar ile kiÃ¾inin kaÃ§ dakika geÃ§ kaldÃ½Ã°Ã½nÃ½ hesapladÃ½k. 
 float hour,minute,saat; 
 int hourtam,en_gec_hour; 
 hour = time-9; 
@@ -23,19 +23,19 @@ return saat;
 
 int main () { 
 FILE *hedef_dosya; 
-hedef_dosya = fopen("gunluk.txt", "w+"); //dosyayı okuma ve yazma modunda açtık. 
+hedef_dosya = fopen("gunluk.txt", "w+"); //dosyayÃ½ okuma ve yazma modunda aÃ§tÃ½k. 
 int sicil,en_gec_sicil,en_erken_sicil; 
 char giris_cikis; 
 float saat,en_gec=09.00,en_erken=17.00;
 printf("Hosgeldiniz\n"); 
 for (;;) { printf("Giris icin < cikis icin > sembolunu\nsicil numaranizi ve saati giriniz (Cikmak icin sicil numarasini 0 giriniz): "); 
 scanf("%s %d %f",&giris_cikis,&sicil,&saat); 
-if (giris_cikis == '<' && sicil != 0) { //gerekli koşullar sağlandığında gerekli işlemleri yaptık. 
-if (saat > en_gec){ en_gec = saat; //en büyük değerin bulunmasını sağladık. 
+if (giris_cikis == '<' && sicil != 0) { //gerekli koÃ¾ullar saÃ°landÃ½Ã°Ã½nda gerekli iÃ¾lemleri yaptÃ½k. 
+if (saat > en_gec){ en_gec = saat; //en bÃ¼yÃ¼k deÃ°erin bulunmasÃ½nÃ½ saÃ°ladÃ½k. 
 en_gec_sicil = sicil; } 
 }
 
-else if (giris_cikis == '>' && sicil != 0){ if (saat < en_erken){ //en küçük değerin bulunmasını sağladık. 
+else if (giris_cikis == '>' && sicil != 0){ if (saat < en_erken){ //en kÃ¼Ã§Ã¼k deÃ°erin bulunmasÃ½nÃ½ saÃ°ladÃ½k. 
 en_erken =saat; 
 en_erken_sicil = sicil; 
 } 
